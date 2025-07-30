@@ -18,7 +18,7 @@ useEffect(()=>{
   emailInputRef.current.value = userDetails.email;
   mobileNoInputRef.current.value = userDetails.mobileNo;
   setProfilePic(`/${userDetails.profilePic}`)
-})
+},[userDetails.profilePic, userDetails.firstName, userDetails.lastName, userDetails.age, userDetails.email, userDetails.mobileNo]);
 
   let firstNameInputRef = useRef();
   let lastNameInputRef = useRef();
