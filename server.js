@@ -78,7 +78,6 @@ app.post("/validateToken",upload.none(),async(req,res)=>{
     }
 });
 
-
 app.post("/signup",upload.single("profilePic"),async(req,res)=>{
     console.log(req.body);
     console.log(req.file); 
