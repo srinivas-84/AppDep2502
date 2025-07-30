@@ -12,7 +12,7 @@ function Tasks() {
         <h1>Dashboard</h1>
         <h1>{userDetails.firstName} {userDetails.lastName}</h1>
         <h1>{userDetails.mobileNo}</h1>
-        <img src={`http://localhost:3690/${userDetails.profilePic}`} alt=''></img>
+        <img src={`/${userDetails.profilePic}`} alt=''></img>
     </div>
   )
 }

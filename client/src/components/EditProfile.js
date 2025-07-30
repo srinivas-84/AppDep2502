@@ -17,7 +17,7 @@ useEffect(()=>{
   ageInputRef.current.value = userDetails.age;
   emailInputRef.current.value = userDetails.email;
   mobileNoInputRef.current.value = userDetails.mobileNo;
-  setProfilePic(`http://localhost:3690/${userDetails.profilePic}`)
+  setProfilePic(`/${userDetails.profilePic}`)
 })
 
   let firstNameInputRef = useRef();
@@ -49,7 +49,7 @@ useEffect(()=>{
       body:dataToSend
     };
 
-    let JSONData = await fetch ("http://localhost:3690/editProfile",reqOptions);
+    let JSONData = await fetch ("/editProfile",reqOptions);
     let JSOData = await JSONData.json();
     console.log(JSOData);
     alert(JSOData.msg);

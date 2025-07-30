@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use("/uploads",express.static('uploads'));
-
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     console.log(file)
@@ -23,6 +23,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+app.get("*",(req,res)=>{
+  res.sendFile("./client/build/index.html");
+});
 
 app.post("/login",upload.none(),async(req,res)=>{
     console.log(req.body);
